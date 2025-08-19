@@ -1,0 +1,34 @@
+### Create a new task
+POST http://localhost:8080/task/create
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "Test Task",
+  "status": "TODO"
+}
+
+### Get the task by ID
+GET http://localhost:8080/task/1
+
+### Update the task
+PUT http://localhost:8080/task/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "Updated Task",
+  "status": "IN_PROGRESS"
+}
+
+### Move task to next stage
+PUT http://localhost:8080/task/next/1
+
+### Move task to previous stage
+PUT http://localhost:8080/task/previous/1
+
+### Delete the task by ID
+DELETE http://localhost:8080/task/1
+
+### Try to get again (should return null)
+GET http://localhost:8080/task/1
